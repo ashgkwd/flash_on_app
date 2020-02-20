@@ -6,7 +6,7 @@ import * as WebBrowser from "expo-web-browser";
 import { RectButton, ScrollView } from "react-native-gesture-handler";
 
 const GreyIcon = styled(Ionicons)`
-  color: rgba(100, 0, 0, 0.25);
+  color: rgba(100, 200, 0, 0.5);
 `;
 
 export default function LinksScreen() {
