@@ -34,12 +34,13 @@ const Action = styled(View)`
 
 const Grid = styled(ScrollView)`
   display: flex;
-  margin: 8px;
+  /* padding: 8px; */
 `;
 
 const Card = styled(View)`
   width: 160px;
-  margin-right: 16px;
+  margin-right: 8px;
+  margin-left: 8px;
 `;
 
 const CardImage = styled(View)`
@@ -89,12 +90,5 @@ function ProductGrid({ orientation, filter }) {
     </>
   );
 }
-
-const styles = StyleSheet.create({
-  horizontalScroll: {
-    flex: 1,
-    margin: 8
-  }
-});
 
 export default ProductGrid;
