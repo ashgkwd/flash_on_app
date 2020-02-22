@@ -8,6 +8,7 @@ import {
   View
 } from "react-native";
 import styled from "styled-components";
+import { ScrollView } from "react-native-gesture-handler";
 
 const Header = styled(View)`
   margin: 16px 8px;
@@ -31,11 +32,9 @@ const Action = styled(View)`
   align-self: flex-end;
 `;
 
-const Grid = styled(View)`
+const Grid = styled(ScrollView)`
   display: flex;
   margin: 8px;
-  flex-direction: ${props =>
-    props.orientation == "horizontal" ? "row" : "column"};
 `;
 
 const Card = styled(View)`
@@ -69,17 +68,8 @@ function ProductGrid({ orientation, filter }) {
           <ActionText>See all</ActionText>
         </Action>
       </Header>
-      <Grid orientation={orientation}>
-        <Card>
-          <CardImage></CardImage>
-          <Price>$34.00</Price>
-          <CardTitle>Woman T-shirt</CardTitle>
-        </Card>
-        <Card>
-          <CardImage></CardImage>
-          <Price>$34.00</Price>
-          <CardTitle>Woman T-shirt</CardTitle>
-        </Card>
+
+      <Grid horizontal={orientation == "horizontal"}>
         <Card>
           <CardImage></CardImage>
           <Price>$34.00</Price>
@@ -99,5 +89,12 @@ function ProductGrid({ orientation, filter }) {
     </>
   );
 }
+
+const styles = StyleSheet.create({
+  horizontalScroll: {
+    flex: 1,
+    margin: 8
+  }
+});
 
 export default ProductGrid;
